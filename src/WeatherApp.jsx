@@ -8,6 +8,8 @@ export const WeatherApp = () => {
 
     const { data, isLoading } = useSelector( state => state.weather );
     const dispatch = useDispatch();
+
+    console.log(process.env.REACT_APP_WEATHER_API_KEY);
     
     useEffect(() => {
         dispatch( getWeather() );  
