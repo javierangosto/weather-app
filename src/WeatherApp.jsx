@@ -1,15 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
-import { Loading } from './UI';
+import { Loading } from './UI/index.js';
 import { getWeather } from './store';
 
 export const WeatherApp = () => {
 
     const { data, isLoading } = useSelector( state => state.weather );
     const dispatch = useDispatch();
-
-    console.log(process.env.REACT_APP_WEATHER_API_KEY);
     
     useEffect(() => {
         dispatch( getWeather() );  
